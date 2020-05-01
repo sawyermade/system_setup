@@ -1,0 +1,18 @@
+Host *
+	ControlPath ~/.ssh/controlmasters/%r@%h:%p
+	ControlMaster auto
+	Compression yes
+	Protocol 2
+
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_rsa_github
+
+Host server1
+	HostName server1.whatever.com
+	User yourusername
+	IdentityFile ~/.ssh/id_rsa_server1
+	ForwardX11 yes
+	ForwardAgent yes
+	Port 888

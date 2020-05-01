@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+spawn ssh-add $::env(HOME)/.ssh/id_rsa_server1
+expect "Enter passphrase"
+send "PASSWORD\n"
+
+spawn ssh-add $::env(HOME)/.ssh/id_rsa_github
+expect "Enter passphrase"
+send "PASSWORD\n"
+
+expect eof
