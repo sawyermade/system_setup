@@ -59,7 +59,7 @@ fi
 
 # Installs apt packages
 sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y
-sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio youtube-dl imagemagick snapd slack-desktop google-chrome-stable samba openjdk-11-jdk calibre y-ppa-manager sysfsutils unetbootin gnome-shell-extension-appindicator pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm pavucontrol neofetch spotify-client balena-etcher-electron rar -y
+sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio youtube-dl imagemagick snapd slack-desktop google-chrome-stable samba openjdk-11-jdk calibre y-ppa-manager sysfsutils unetbootin gnome-shell-extension-appindicator pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm pavucontrol neofetch spotify-client balena-etcher-electron rar beep -y
 
 # Xbox One Controller
 #sudo apt install sysfsutils -y && echo  "/module/bluetooth/parameters/disable_ertm=1" | sudo tee /etc/sysfs.conf && sudo systemctl restart sysfsutils.service
