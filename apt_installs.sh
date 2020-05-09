@@ -162,5 +162,5 @@ fi
 # echo "1. cuda  *if not on pop!_os"
 
 # Launches gnome extensions
-echo -e "\nEnable Ubuntu appindicators"
-gnome-shell-extension-prefs &
+# echo -e "\nEnable Ubuntu appindicators"
+# gnome-shell-extension-prefs &
