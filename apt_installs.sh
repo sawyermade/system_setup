@@ -99,12 +99,12 @@ fi
 # 	sudo apt-get update
 # 	sudo apt install cuda -y
 # fi
-read -p 'Install Cuda System76? [Y/n]: ' temp_install_cuda
-if [ $temp_install_cuda == 'Y' ] || [ $temp_install_cuda == 'y' ]
-then
-	# sudo apt install system76-cuda-$temp_cuda_ver system76-cudnn-$temp_cuda_ver -y
-	sudo apt install system76-cuda-latest -y
-fi
+# read -p 'Install Cuda System76? [Y/n]: ' temp_install_cuda
+# if [ $temp_install_cuda == 'Y' ] || [ $temp_install_cuda == 'y' ]
+# then
+# 	# sudo apt install system76-cuda-$temp_cuda_ver system76-cudnn-$temp_cuda_ver -y
+# 	sudo apt install system76-cuda-latest -y
+# fi
 
 # Installs conda
 read -p 'Install Anaconda 3? [Y/n]: ' temp_install_conda
