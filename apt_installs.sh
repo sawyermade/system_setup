@@ -21,45 +21,46 @@ then
 fi
 
 # Adds ros-latest
-if [ ! -f /etc/apt/sources.list.d/ros-latest.list ]
-then 
-	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-	sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-fi
+# if [ ! -f /etc/apt/sources.list.d/ros-latest.list ]
+# then 
+# 	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+# 	sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+# fi
 
 # Adds realsense2
-if [ ! -f /etc/apt/sources.list.d/realsense2.list ]
-then 
-	sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
-	echo "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo $temp_codename main" | sudo tee /etc/apt/sources.list.d/realsense2.list
-fi
+# if [ ! -f /etc/apt/sources.list.d/realsense2.list ]
+# then 
+# 	sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
+# 	echo "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo $temp_codename main" | sudo tee /etc/apt/sources.list.d/realsense2.list
+# fi
 
 # Adds unetbootin repo
-if [ ! -f /etc/apt/sources.list.d/gezakovacs-ubuntu-ppa-${temp_codename}.list ]
-then 
-	sudo add-apt-repository ppa:gezakovacs/ppa
-fi
+# if [ ! -f /etc/apt/sources.list.d/gezakovacs-ubuntu-ppa-${temp_codename}.list ]
+# then 
+# 	sudo add-apt-repository ppa:gezakovacs/ppa
+# fi
 
 # Flatpak Repo
 # Adds unetbootin repo
-if [ ! -f /etc/apt/sources.list.d/alexlarsson-ubuntu-flatpak-${temp_codename}.list ]
-then 
-	sudo add-apt-repository ppa:alexlarsson/flatpak
-fi
+# if [ ! -f /etc/apt/sources.list.d/alexlarsson-ubuntu-flatpak-${temp_codename}.list ]
+# then 
+# 	sudo add-apt-repository ppa:alexlarsson/flatpak
+# fi
 
 # PPA Manager
-sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+# sudo add-apt-repository ppa:webupd8team/y-ppa-manager
 
 # Etcher
-if [ ! -f /etc/apt/sources.list.d/balena-etcher.list ]
-then 
-	echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
-	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
-fi
+# if [ ! -f /etc/apt/sources.list.d/balena-etcher.list ]
+# then 
+# 	echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+# 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
+# fi
 
 # Installs apt packages
 sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y
-sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio youtube-dl imagemagick snapd slack-desktop google-chrome-stable samba openjdk-11-jdk calibre y-ppa-manager sysfsutils unetbootin gnome-shell-extension-appindicator pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm pavucontrol neofetch spotify-client balena-etcher-electron rar -y
+# sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio youtube-dl imagemagick snapd slack-desktop google-chrome-stable samba openjdk-11-jdk calibre y-ppa-manager sysfsutils unetbootin gnome-shell-extension-appindicator pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm pavucontrol neofetch spotify-client balena-etcher-electron rar -y
+sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio imagemagick slack-desktop google-chrome-stable samba openjdk-11-jdk calibre pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm neofetch spotify-client rar -y
 
 # Xbox One Controller
 #sudo apt install sysfsutils -y && echo  "/module/bluetooth/parameters/disable_ertm=1" | sudo tee /etc/sysfs.conf && sudo systemctl restart sysfsutils.service
