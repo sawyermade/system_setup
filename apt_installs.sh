@@ -60,7 +60,7 @@ fi
 # Installs apt packages
 sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y
 # sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio youtube-dl imagemagick snapd slack-desktop google-chrome-stable samba openjdk-11-jdk calibre y-ppa-manager sysfsutils unetbootin gnome-shell-extension-appindicator pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm pavucontrol neofetch spotify-client balena-etcher-electron rar -y
-sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio imagemagick slack-desktop google-chrome-stable samba openjdk-11-jdk calibre pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm neofetch spotify-client rar -y
+sudo apt install git zsh expect build-essential openssh-server libopencv-dev libopencv-contrib-dev python3 python3-pip libboost-all-dev curl mc tmux sshpass screen tree unrar apt-transport-https sublime-text htop glances filezilla hexchat evolution virt-manager qemu gnome-tweaks chrome-gnome-shell nemo qbittorrent vim vlc discord steam gparted gimp obs-studio imagemagick slack-desktop google-chrome-stable samba openjdk-11-jdk calibre pwgen aptitude kdenlive fail2ban powertop weka qemu-kvm neofetch spotify-client rar docker.io -y
 
 # Xbox One Controller
 #sudo apt install sysfsutils -y && echo  "/module/bluetooth/parameters/disable_ertm=1" | sudo tee /etc/sysfs.conf && sudo systemctl restart sysfsutils.service
@@ -89,6 +89,16 @@ if [ $temp_install_rs == 'Y' ] || [ $temp_install_rs == 'y' ]
 then
 	sudo apt install librealsense2-dkms librealsense2-utils librealsense2-dev librealsense2-dbg -y
 fi
+
+# # Docker
+# read -p 'Install Docker? [Y/n]: ' temp_install_docker
+# if [ $temp_install_docker == 'Y' ] || [ $temp_install_docker == 'y' ]
+# then
+# 	sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+# 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+# fi
+
 
 # Cuda if Pop!_OS Nvidia version, fails for everything else
 # read -p 'Install Cuda Nvidia? [Y/n]: ' temp_install_cuda
