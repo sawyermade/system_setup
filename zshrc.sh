@@ -7,12 +7,12 @@ then
 fi
 export PATH="$HOME/.local/bin:$PATH"
 
-if [ ! -d "$HOME/AppImage" ]
-then
-	mkdir "$HOME/AppImage"
-	chmod -R 755 "$HOME/AppImage"
-fi
-export PATH="$HOME/AppImage:$PATH"
+# if [ ! -d "$HOME/AppImage" ]
+# then
+# 	mkdir "$HOME/AppImage"
+# 	chmod -R 755 "$HOME/AppImage"
+# fi
+# export PATH="$HOME/AppImage:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
