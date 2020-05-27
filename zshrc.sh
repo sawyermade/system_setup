@@ -169,4 +169,3 @@ fi
 autoload -U compinit && compinit
 alias py='python3'
 ### Conda Completion ###
-

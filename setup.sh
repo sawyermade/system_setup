@@ -55,6 +55,7 @@ temp_git="cd $temp_cwd > /dev/null; git pull; cd - > /dev/null"
 temp_ip_fi="fi"
 temp_setup="cd $temp_cwd > /dev/null && bash ./setup.sh && cd - > /dev/null"
 temp_zshrc="source ${temp_cwd}/zshrc.sh"
+temp_openssl="export OPENSSL_CONF=${temp_cwd}/openssl.cnf"
 echo $temp_eval > ~/.zshrc
 echo $temp_exp >> ~/.zshrc
 echo $temp_ip_if >> ~/.zshrc 
@@ -63,6 +64,7 @@ echo $temp_ip_fi >> ~/.zshrc
 echo $temp_setup >> ~/.zshrc
 echo $temp_zshrc >> ~/.zshrc
 echo $temp_exp >> ~/.zshrc
+echo $temp_openssl >> ~/.zshrc 
 
 # Installs conda completion
 if [ ! -d ~/.oh-my-zsh/custom/plugins/conda-zsh-completion ]
