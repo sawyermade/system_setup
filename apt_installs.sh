@@ -156,17 +156,6 @@ then
 	sudo dpkg -i GlobalProtect_deb-5.1.1.0-17.deb
 fi
 
-# Install C410 Drivers
-read -p 'Install C410? [Y/n]: ' temp_install_gp
-if [ $temp_install_gp == 'Y' ] || [ $temp_install_gp == 'y' ]
-then
-	cd c410
-	tar zxf uld_V1.00.39_01.17.tar.gz
-	sudo uld/install.sh
-	rm -rf uld
-	cd $temp_cwd
-fi
-
 # What needs to be installed
 # echo -e "\nFollowing packages must be manually installed:"
 # echo "1. cuda  *if not on pop!_os"
