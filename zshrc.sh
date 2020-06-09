@@ -136,7 +136,8 @@ elif [ -f /opt/anaconda3/etc/profile.d/conda.sh ]
 then 
 	source /opt/anaconda3/etc/profile.d/conda.sh
 fi
-# source /data/datasets/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1 || source ~/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1
+# source /opt/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1 || source ~/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1
+alias conda-update='sudo /opt/anaconda3/bin/conda update -n base -c defaults conda || conda update -n base -c defaults conda'
 ### CONDA ###
 
 ### SSH ###
@@ -152,6 +153,7 @@ alias gaivi2='ssh gaivi2'
 alias carrt='ssh carrt'
 alias puppy='ssh puppy'
 alias beast='ssh beast'
+alias hulk='ssh hulk'
 ### SSH ###
 
 ### ROS ###

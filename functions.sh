@@ -17,17 +17,23 @@ function adduser_hulk {
 	# Add user and add user to data group
 	sudo adduser $temp_new_user
 	sudo adduser $temp_new_user data
-
-	# Sets quota on users home directory
 	sudo setquota -u $temp_new_user 100G 100G 0 0 /home 
+
+	# Adds conda to bashrc
+	echo "source /opt/anaconda3/etc/profile.d/conda.sh" | sudo tee -a $temp_home_dir/.bashrc
+	sudo chown $temp_new_user:$temp_new_user $temp_home_dir/.bashrc
 
 	# Sets ownership and permissions for users data folder
 	sudo mkdir -p $temp_user_data_dir
 	sudo chown -R $temp_new_user $temp_user_data_dir
 	sudo chmod -R 2755 $temp_user_data_dir
+	sudo setquota -u $temp_new_user 1000G 1000G 0 0 /data 
 
-	# Sets quota for users data directory
-	sudo setquota
+	# Creates sybolic links
+	sudo ln -s $temp_user_data_dir $temp_home_dir/data
+	sudo ln -s $temp_datasets_dir $temp_home_dir/datasets
+	sudo chown -h $temp_new_user:$temp_new_user $temp_home_dir/data
+	sudo chown -h $temp_new_user:$temp_new_user $temp_home_dir/datasets 
 }
 
 function create_data_datasets {

@@ -16,9 +16,10 @@ function adduser_data {
    temp_home_dir=/home/$temp_new_user
 
    sudo adduser $temp_new_user
+   sudo adduser $temp_new_user
    sudo mkdir -p $temp_user_data_dir
-   sudo chown -R $temp_new_user:$temp_new_user $temp_user_data_dir
-   sudo chmod -R 6755 $temp_user_data_dir
+   sudo chown -R $temp_new_user $temp_user_data_dir
+   sudo chmod -R 2755 $temp_user_data_dir
 
    sudo ln -s $temp_user_data_dir $temp_home_dir/data
    sudo chown -h $temp_new_user:$temp_new_user $temp_home_dir/data
