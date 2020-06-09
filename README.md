@@ -1,8 +1,8 @@
 # System Setup with ZSH & OMZ
 ## Clone and setup
 ```bash
-git clone git@github.com:sawyermade/system_setup.git 
-cd system_setup
+git clone git@github.com:sawyermade/system_setup.git ~/.system_setup
+cd ~/.system_setup
 bash setup.sh
 ```
 Place passphrase for key in ssh_add.exp in the send command: send "PASSWORD\n"
@@ -11,13 +11,13 @@ Now exit the shell twice, log back in and it should be all setup!
 
 ## Install apt packages
 ```bash
-cd system_setup
+cd ~/.system_setup
 bash apt_installs.sh
 ```
 
 ## Keys
 ```bash
-git clone --recurse-submodules git@github.com:sawyermade/system_setup.git 
+git clone --recurse-submodules git@github.com:sawyermade/system_setup.git ~/.system_setup
 ```
 Example [keys/ssh_config](EXAMPLE-ssh_config) and [keys/ssh_add.exp](EXAMPLE-ssh_add.exp)
 
