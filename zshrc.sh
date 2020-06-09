@@ -132,7 +132,7 @@ if [ -f ~/anaconda3/etc/profile.d/conda.sh ]
 then
 	source ~/anaconda3/etc/profile.d/conda.sh
 	
-elif [ -f /data/datasets/anaconda3/etc/profile.d/conda.sh ]
+elif [ -f /opt/anaconda3/etc/profile.d/conda.sh ]
 then 
 	source /data/datasets/anaconda3/etc/profile.d/conda.sh
 fi
