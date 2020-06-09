@@ -124,6 +124,7 @@ alias aii='$HOME/.aii.sh'
 alias vu='globalprotect connect'
 alias vd='globalprotect disconnect'
 alias vs='globalprotect show --status'
+alias reload='exec zsh'
 ### ALIAS ###
 
 ### CONDA ###
