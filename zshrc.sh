@@ -134,7 +134,7 @@ then
 	
 elif [ -f /opt/anaconda3/etc/profile.d/conda.sh ]
 then 
-	source /data/datasets/anaconda3/etc/profile.d/conda.sh
+	source /opt/anaconda3/etc/profile.d/conda.sh
 fi
 # source /data/datasets/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1 || source ~/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1
 ### CONDA ###
