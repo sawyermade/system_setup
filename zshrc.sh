@@ -141,8 +141,8 @@ alias conda-update='sudo /opt/anaconda3/bin/conda update -n base -c defaults con
 ### CONDA ###
 
 ### SSH ###
-alias sshpf='eval $(ssh-agent) && ssh-add'
 alias home1='ssh home1'
+alias home1-fs='temp_server=home1; temp_path=/home/smc; [ ! -d ~/mnt/$temp_server ] && mkdir -p ~/mnt/$temp_server; sshfs $temp_server:$temp_path ~/mnt/$temp_server'
 alias home2='ssh home2'
 alias home1l='ssh home1l'
 alias home2l='ssh home2l'
@@ -153,7 +153,11 @@ alias gaivi2='ssh gaivi2'
 alias carrt='ssh carrt'
 alias puppy='ssh puppy'
 alias beast='ssh beast'
+alias beast-fs='temp_server=beast; temp_path=/home/smc; [ ! -d ~/mnt/$temp_server ] && mkdir -p ~/mnt/$temp_server; sshfs $temp_server:$temp_path ~/mnt/$temp_server'
+alias beast-um='umount ~/mnt/beast'
 alias hulk='ssh hulk'
+alias hulk-fs='temp_server=hulk; temp_path=/home/smc; [ ! -d ~/mnt/$temp_server ] && mkdir -p ~/mnt/$temp_server; sshfs $temp_server:$temp_path ~/mnt/$temp_server'
+alias hulk-um='umount ~/mnt/hulk'
 ### SSH ###
 
 ### ROS ###
