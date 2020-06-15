@@ -67,5 +67,5 @@ function  timelast {
 }
 
 function timediff {
-	echo -n "$(($(date +%s) - $(cat $1/time.last)))"
+	echo -n "$(($(date +%s) - $(cat $1)))"
 }
