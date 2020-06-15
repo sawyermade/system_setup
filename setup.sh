@@ -63,8 +63,9 @@ temp_eval="eval \$(ssh-agent) > /dev/null"
 temp_exp="expect ${temp_cwd}/keys/ssh_add.exp > /dev/null"
 temp_funcs="source ${temp_cwd}/functions.sh"
 temp_alias="source ${temp_cwd}/aliases.sh"
+temp_if_timelast="[ ! -f $temp_cwd/time.last ] && timelast $temp_cwd"
 temp_timediff="temp_diff=\$(timediff $temp_cwd/time.last)"
-temp_ip_if="wget -q --spider http://google.com; if [ $? -eq 0 ] && [ \$temp_diff -ge 86400 ]; then"
+temp_ip_if="wget -q --spider http://google.com; if [ \$? -eq 0 ] && [ \$temp_diff -ge 10 ]; then"
 temp_git="cd $temp_cwd > /dev/null && git pull && cd - > /dev/null"
 temp_timelast="timelast $temp_cwd"
 temp_setup="cd $temp_cwd > /dev/null && bash ./setup.sh && cd - > /dev/null"
@@ -77,6 +78,7 @@ echo $temp_eval >> ~/.zshrc
 echo $temp_exp >> ~/.zshrc
 echo $temp_funcs >> ~/.zshrc
 echo $temp_alias >> ~/.zshrc
+echo $temp_if_timelast >> ~/.zshrc
 echo $temp_timediff >> ~/.zshrc
 echo $temp_ip_if >> ~/.zshrc 
 echo $temp_git >> ~/.zshrc

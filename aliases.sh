@@ -11,6 +11,7 @@ alias vd='globalprotect disconnect'
 alias vs='globalprotect show --status'
 alias reload='exec zsh'
 alias py='python3'
+alias gpr='git pull --recurse-submodules'
 ### ALIAS ###
 
 ### SSH ALIAS ###
