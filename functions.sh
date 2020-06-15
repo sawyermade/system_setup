@@ -69,3 +69,12 @@ function  timelast {
 function timediff {
 	echo -n "$(($(date +%s) - $(cat $1)))"
 }
+
+function mountsshfs {
+	[ ! -d ~/mnt/$1 ] && mkdir -p ~/mnt/$1
+	sshfs $1:$2 ~/mnt/$1
+}
+
+function umountsshfs {
+	umount ~/mnt/$1
+}
