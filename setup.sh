@@ -72,7 +72,7 @@ temp_ip_fi="fi"
 temp_zshrc="source ${temp_cwd}/zshrc.sh"
 temp_openssl="export OPENSSL_CONF=${temp_cwd}/openssl.cnf"
 
-echo "# SawyerMade Sheeeit" > ~/.zshrc
+echo "# SawyerMade" > ~/.zshrc
 echo $temp_eval >> ~/.zshrc
 echo $temp_exp >> ~/.zshrc
 echo $temp_funcs >> ~/.zshrc
