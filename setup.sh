@@ -3,6 +3,9 @@
 # zsh location on system
 temp_zsh_location="/usr/bin/zsh"
 
+# System Setup director location
+temp_cwd=$(pwd)
+
 # Checks if zshrc.sh exists
 if [ ! -f ~/.zshrc ]
 then
@@ -46,27 +49,43 @@ then
 	temp_flag=0
 fi
 
+# Creates time file if doesnt exist
+function  timelast {
+	date +%s > $1/time.last
+}
+function timediff {
+	echo -n "$(($(date +%s) - $(cat $1/time.last)))"
+}
+[ ! -f $temp_cwd/time.last ] && timelast $temp_cwd
+
 # Creates ~/.zshrc 
-temp_cwd=$(pwd)
 temp_eval="eval \$(ssh-agent) > /dev/null"
 temp_exp="expect ${temp_cwd}/keys/ssh_add.exp > /dev/null"
-temp_ip_if="if ping -q -c 1 -W 1 google.com > /dev/null 2> /dev/null; then"
-temp_git="cd $temp_cwd > /dev/null; git pull --recurse-submodules; cd - > /dev/null"
-temp_ip_fi="fi"
+temp_funcs="source ${temp_cwd}/functions.sh"
+temp_alias="source ${temp_cwd}/aliases.sh"
+temp_timediff="temp_diff=\$(timediff $temp_cwd)"
+temp_ip_if="wget -q --spider http://google.com; if [ $? -eq 0 ] && [ \$temp_diff -ge 86400 ]; then"
+temp_git="cd $temp_cwd > /dev/null && git pull && cd - > /dev/null"
+temp_timelast="timelast $temp_cwd"
 temp_setup="cd $temp_cwd > /dev/null && bash ./setup.sh && cd - > /dev/null"
+temp_ip_fi="fi"
 temp_zshrc="source ${temp_cwd}/zshrc.sh"
 temp_openssl="export OPENSSL_CONF=${temp_cwd}/openssl.cnf"
-temp_funcs="source ${temp_cwd}/functions.sh"
-echo $temp_eval > ~/.zshrc
+
+echo "# SawyerMade Sheeeit" > ~/.zshrc
+echo $temp_eval >> ~/.zshrc
 echo $temp_exp >> ~/.zshrc
+echo $temp_funcs >> ~/.zshrc
+echo $temp_alias >> ~/.zshrc
+echo $temp_timediff >> ~/.zshrc
 echo $temp_ip_if >> ~/.zshrc 
-echo $temp_git >> ~/.zshrc 
-echo $temp_ip_fi >> ~/.zshrc
+echo $temp_git >> ~/.zshrc
+echo $temp_timelast >> ~/.zshrc
 echo $temp_setup >> ~/.zshrc
+echo $temp_ip_fi >> ~/.zshrc
 echo $temp_zshrc >> ~/.zshrc
 echo $temp_exp >> ~/.zshrc
 echo $temp_openssl >> ~/.zshrc 
-echo $temp_funcs >> ~/.zshrc 
 
 # Installs conda completion
 if [ ! -d ~/.oh-my-zsh/custom/plugins/conda-zsh-completion ]
@@ -89,22 +108,9 @@ then
 	chmod -R 700 ~/.ssh
 fi
 
-# Install private ssh key
-# if [ ! -f ~/.ssh/id_rsa ]
-# then 
-# 	echo "copying private keys..."
-# 	cp ./keys/id_rsa ~/.ssh/
-# 	chmod -R 700 ~/.ssh
-# fi
+# Install private ssh keys
 cp ${temp_cwd}/keys/id_rsa* ~/.ssh/
 
-# Install public ssh key
-# if [ ! -f ~/.ssh/authorized_keys ]
-# then 
-# 	echo "copying public key..."
-# 	cp ./keys/id_rsa.pub ~/.ssh/authorized_keys
-# 	chmod -R 700 ~/.ssh
-# fi
 
 # Checks if zsh is primary shell
 if [[ ! "$SHELL" == "/usr/bin/zsh" && ! "$SHELL" == "/bin/zsh" ]] && [ $temp_flag == 1 ]
@@ -126,7 +132,3 @@ tmux new-session -d -s dump > /dev/null
 tmux source-file ~/.tmux.conf > /dev/null
 tmux source ~/.tmux.conf > /dev/null
 tmux kill-session -t dump > /dev/null
-
-# Copies AppImage Install Script
-# cp aii.sh ~/.aii.sh
-# chmod +x ~/.aii.sh

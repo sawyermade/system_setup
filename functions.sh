@@ -61,3 +61,11 @@ function create_data_datasets {
 		sudo adduser $USER datasets
 	fi
 }
+
+function  timelast {
+	date +%s > $1/time.last
+}
+
+function timediff {
+	echo -n "$(($(date +%s) - $(cat $1/time.last)))"
+}

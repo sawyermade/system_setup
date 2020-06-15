@@ -89,7 +89,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 zstyle ':completion::complete:*' use-cache 1
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -113,20 +112,6 @@ zstyle ':completion::complete:*' use-cache 1
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-### ALIAS ###
-alias lsl='ls -lh'
-alias aar='sudo apt autoremove -y'
-alias adga='adg -y && aar'
-alias rstart='screen -dmS rtorrent rtorrent'
-alias rt='stty stop undef; stty start undef; screen -x rtorrent'
-alias tsd='tmux new-session -d -s'
-alias aii='$HOME/.aii.sh'
-alias vu='globalprotect connect'
-alias vd='globalprotect disconnect'
-alias vs='globalprotect show --status'
-alias reload='exec zsh'
-### ALIAS ###
-
 ### CONDA ###
 if [ -f ~/anaconda3/etc/profile.d/conda.sh ]
 then
@@ -136,29 +121,11 @@ elif [ -f /opt/anaconda3/etc/profile.d/conda.sh ]
 then 
 	source /opt/anaconda3/etc/profile.d/conda.sh
 fi
-# source /opt/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1 || source ~/anaconda3/etc/profile.d/conda.sh > /dev/null 2>&1
-alias conda-update='sudo /opt/anaconda3/bin/conda update -n base -c defaults conda || conda update -n base -c defaults conda'
-### CONDA ###
 
-### SSH ###
-alias home1='ssh home1'
-alias home1-fs='temp_server=home1; temp_path=/home/smc; [ ! -d ~/mnt/$temp_server ] && mkdir -p ~/mnt/$temp_server; sshfs $temp_server:$temp_path ~/mnt/$temp_server'
-alias home2='ssh home2'
-alias home1l='ssh home1l'
-alias home2l='ssh home2l'
-alias seedbox='ssh seedbox'
-alias deepv='ssh deepv'
-alias gaivi='ssh gaivi'
-alias gaivi2='ssh gaivi2'
-alias carrt='ssh carrt'
-alias puppy='ssh puppy'
-alias beast='ssh beast'
-alias beast-fs='temp_server=beast; temp_path=/home/smc; [ ! -d ~/mnt/$temp_server ] && mkdir -p ~/mnt/$temp_server; sshfs $temp_server:$temp_path ~/mnt/$temp_server'
-alias beast-um='umount ~/mnt/beast'
-alias hulk='ssh hulk'
-alias hulk-fs='temp_server=hulk; temp_path=/home/smc; [ ! -d ~/mnt/$temp_server ] && mkdir -p ~/mnt/$temp_server; sshfs $temp_server:$temp_path ~/mnt/$temp_server'
-alias hulk-um='umount ~/mnt/hulk'
-### SSH ###
+alias conda-update='sudo /opt/anaconda3/bin/conda update -n base -c defaults conda || conda update -n base -c defaults conda'
+
+autoload -U compinit && compinit
+### CONDA ###
 
 ### ROS ###
 if [ -f /opt/ros/melodic/setup.zsh ]
@@ -168,11 +135,5 @@ fi
 ### ROS ###
 
 ### CUDA ###
-# export PATH=/usr/local/cuda/bin:/usr/local/cuda/NsightCompute-2019.1${PATH:+:${PATH}}
-# export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+[ -d /usr/local/cuda ] && export PATH=/usr/local/cuda/bin:/usr/local/cuda/NsightCompute-2019.1${PATH:+:${PATH}} && export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ### CUDA ###
-
-### Conda Completion ###
-autoload -U compinit && compinit
-alias py='python3'
-### Conda Completion ###
