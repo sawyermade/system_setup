@@ -40,6 +40,13 @@ then
 	sudo apt install zsh zsh-doc -y
 fi
 
+# Checks if zsh is installed
+if ! hash wget 2>/dev/null
+then
+	echo "wget not installed, installing wget..."
+	sudo apt install wget
+fi
+
 # Installs OMZ
 temp_flag=1
 if [ ! -d ~/.oh-my-zsh ]
