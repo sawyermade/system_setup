@@ -44,7 +44,7 @@ fi
 if ! hash wget 2>/dev/null
 then
 	echo "wget not installed, installing wget..."
-	sudo apt install wget
+	sudo apt install wget -y
 fi
 
 # Installs OMZ
