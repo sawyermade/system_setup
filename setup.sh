@@ -12,7 +12,7 @@ then
 	sudo apt update
 fi
 
-# Checks if git is installed
+# Checks if tmux is installed
 if ! hash tmux 2>/dev/null
 then
 	echo "tmux not installed, installing tmux..."
@@ -40,11 +40,18 @@ then
 	sudo apt install zsh zsh-doc -y
 fi
 
-# Checks if zsh is installed
+# Checks if wget is installed
 if ! hash wget 2>/dev/null
 then
 	echo "wget not installed, installing wget..."
 	sudo apt install wget -y
+fi
+
+# Checks if curl is installed
+if ! hash curl 2>/dev/null
+then
+	        echo "curl not installed, installing curl..."
+		        sudo apt install curl -y
 fi
 
 # Installs OMZ
@@ -141,3 +148,11 @@ tmux new-session -d -s dump > /dev/null
 tmux source-file ~/.tmux.conf > /dev/null
 tmux source ~/.tmux.conf > /dev/null
 tmux kill-session -t dump > /dev/null
+
+# CUDA Path Bullshit
+echo "source /etc/profile" >> ~/.zshrc
+#if [ -f /usr/lib/cuda/version.txt ]
+#then
+#	echo "export PATH=/usr/lib/cuda/bin${PATH:+:${PATH}}" >> ~/.zshrc
+#	echo "export LD_LIBRARY_PATH=/usr/lib/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}" >> ~/.zshrc
+#fi
