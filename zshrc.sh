@@ -135,5 +135,16 @@ fi
 ### ROS ###
 
 ### CUDA ###
-[ -d /usr/local/cuda ] && export PATH=/usr/local/cuda/bin:/usr/local/cuda/NsightCompute-2019.1${PATH:+:${PATH}} && export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# Ubuntu
+if [ -d /usr/local/cuda ] 
+then
+	export PATH=/usr/local/cuda/bin:/usr/local/cuda/NsightCompute-2019.1${PATH:+:${PATH}}
+	export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+# Pop OS
+elif [ -d /usr/local/cuda ] 
+then
+	export PATH=$PATH:/usr/lib/cuda/bin >> ~/.zshrc 
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/cuda/lib64 >> ~/.zshrc
+fi
 ### CUDA ###

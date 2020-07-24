@@ -151,8 +151,8 @@ tmux kill-session -t dump > /dev/null
 
 # CUDA Path Bullshit
 #echo "source /etc/profile" >> ~/.zshrc
-if [ -f /usr/lib/cuda/version.txt ]
-then
+#if [ -f /usr/lib/cuda/version.txt ]
+#then
 	#echo "export PATH=$PATH:/usr/lib/cuda/bin" >> ~/.zshrc
-	echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/cuda/lib64" >> ~/.zshrc
-fi
+	#echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/cuda/lib64" >> ~/.zshrc
+#fi
