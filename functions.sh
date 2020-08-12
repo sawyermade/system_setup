@@ -78,3 +78,11 @@ function mountsshfs {
 function umountsshfs {
 	umount ~/mnt/$1
 }
+
+function update_plex {
+	temp_plex_in="https://downloads.plex.tv/plex-media-server-new/${1}/debian/plexmediaserver_${1}_amd64.deb -O plex_update.deb"
+	temp_plex_out="plex_update.deb"
+	wget $temp_plex_in
+	sudo dpkg -i $temp_plex_out
+	rm -f $temp_plex_out
+}
