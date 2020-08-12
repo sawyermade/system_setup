@@ -12,6 +12,7 @@ alias vs='globalprotect show --status'
 alias reload='exec zsh'
 alias py='python3'
 alias gpr='git pull --recurse-submodules'
+alias rsync-app='rsync -rzvP --append --inplace'
 ### ALIAS ###
 
 ### SSH ALIAS ###
