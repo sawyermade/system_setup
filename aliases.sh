@@ -15,6 +15,7 @@ alias reload='exec zsh'
 alias py='python3'
 alias gpr='git pull --recurse-submodules'
 alias rsync-app='rsync -rzvP --append --inplace'
+alias xming='export DISPLAY=:0'
 ### ALIAS ###
 
 ### SSH ALIAS ###
