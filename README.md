@@ -1,7 +1,7 @@
 # System Setup with ZSH & OMZ
 ## Clone and setup
 ```bash
-git clone git@github.com:sawyermade/system_setup.git ~/.system_setup
+git clone https://github.com/sawyermade/system_setup.git ~/.system_setup
 cd ~/.system_setup
 bash setup.sh
 ```
