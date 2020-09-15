@@ -76,19 +76,19 @@ sudo apt install git zsh expect build-essential openssh-server libopencv-dev lib
 #flatpak install skype -y
 
 # Installs ros
-read -p 'Install ROS? [Y/n]: ' temp_install_ros
-if [ $temp_install_ros == 'Y' ] || [ $temp_install_ros == 'y' ]
-then
-	sudo apt install ros-melodic-desktop-full -y
-	sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential -y
-fi
+#read -p 'Install ROS? [Y/n]: ' temp_install_ros
+#if [ $temp_install_ros == 'Y' ] || [ $temp_install_ros == 'y' ]
+#then
+#	sudo apt install ros-melodic-desktop-full -y
+#	sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential -y
+#fi
 
 # Realsense2
-read -p 'Install realsense2? [Y/n]: ' temp_install_rs
-if [ $temp_install_rs == 'Y' ] || [ $temp_install_rs == 'y' ]
-then
-	sudo apt install librealsense2-dkms librealsense2-utils librealsense2-dev librealsense2-dbg -y
-fi
+#read -p 'Install realsense2? [Y/n]: ' temp_install_rs
+#if [ $temp_install_rs == 'Y' ] || [ $temp_install_rs == 'y' ]
+#then
+#	sudo apt install librealsense2-dkms librealsense2-utils librealsense2-dev librealsense2-dbg -y
+#fi
 
 # # Docker
 # read -p 'Install Docker? [Y/n]: ' temp_install_docker
@@ -121,7 +121,7 @@ fi
 read -p 'Install Anaconda 3? [Y/n]: ' temp_install_conda
 if [ $temp_install_conda == 'Y' ] || [ $temp_install_conda == 'y' ]
 then
-	temp_conda_fname="Anaconda3-2019.10-Linux-x86_64.sh"
+	temp_conda_fname="Anaconda3-2020.07-Linux-x86_64.sh"
 	wget https://repo.anaconda.com/archive/${temp_conda_fname}
 
 	read -p 'Install System-wide? [Y/n]: ' temp_install_conda
@@ -143,11 +143,11 @@ then
 fi
 
 # Install AppImageLauncher
-read -p 'Install AppImageLauncher? [Y/n]: ' temp_install_ail
-if [ $temp_install_ail == 'Y' ] || [ $temp_install_ail == 'y' ]
-then
-	sudo dpkg -i appimagelauncher_2.1.1-travis931.f6d5926.bionic_amd64.deb
-fi
+#read -p 'Install AppImageLauncher? [Y/n]: ' temp_install_ail
+#if [ $temp_install_ail == 'Y' ] || [ $temp_install_ail == 'y' ]
+#then
+#	sudo dpkg -i appimagelauncher_2.1.1-travis931.f6d5926.bionic_amd64.deb
+#fi
 
 # Install Global Protect VPN
 read -p 'Install Global Protect? [Y/n]: ' temp_install_gp
