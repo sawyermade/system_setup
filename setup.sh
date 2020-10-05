@@ -81,6 +81,7 @@ temp_if_timelast="[ ! -f $temp_cwd/time.last ] && timelast $temp_cwd"
 temp_timediff="temp_diff=\$(timediff $temp_cwd/time.last)"
 temp_ip_if="wget -q --spider http://google.com; if [ \$? -eq 0 ] && [ \$temp_diff -ge 86400 ]; then"
 temp_git="cd $temp_cwd > /dev/null && git pull && cd - > /dev/null"
+temp_git_keys="cd $temp_cwd/keys > /dev/null && git pull origin HEAD:master && cd - > /dev/null"
 temp_timelast="timelast $temp_cwd"
 temp_setup="cd $temp_cwd > /dev/null && bash ./setup.sh && cd - > /dev/null"
 temp_ip_fi="fi"
@@ -96,6 +97,7 @@ echo $temp_if_timelast >> ~/.zshrc
 echo $temp_timediff >> ~/.zshrc
 echo $temp_ip_if >> ~/.zshrc 
 echo $temp_git >> ~/.zshrc
+echo $temp_git_keys >> ~/.zshrc
 echo $temp_timelast >> ~/.zshrc
 echo $temp_setup >> ~/.zshrc
 echo $temp_ip_fi >> ~/.zshrc
