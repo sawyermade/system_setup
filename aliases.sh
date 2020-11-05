@@ -1,9 +1,7 @@
 ### ALIAS ###
-alias lsl='ls -lh'
+alias lsl='ls -lhH'
 alias aar='sudo apt autoremove -y'
 alias adga='adg -y && aar'
-#alias rstart='screen -dmS rtorrent rtorrent'
-#alias rt='stty stop undef; stty start undef; screen -x rtorrent'
 alias rstart='tmux new -d -s rtorrent rtorrent'
 alias rt='tmux a #rtorrent'
 alias tsd='tmux new-session -d -s'
