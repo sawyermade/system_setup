@@ -111,7 +111,7 @@ echo $temp_openssl >> ~/.zshrc
 if [ ! -d ~/.oh-my-zsh/custom/plugins/conda-zsh-completion ]
 then
 	echo "installing conda completion..."
-	git clone https://github.com/esc/conda-zsh-completion ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
+	git clone git@github.com:sawyermade/conda-zsh-completion.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
 fi
 
 # Checks if .ssh exists
