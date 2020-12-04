@@ -82,7 +82,7 @@ temp_timediff="temp_diff=\$(timediff $temp_cwd/time.last)"
 temp_ip_if="wget -q --spider http://google.com; if [ \$? -eq 0 ] && [ \$temp_diff -ge 86400 ]; then"
 temp_git="cd $temp_cwd > /dev/null && git pull && cd - > /dev/null"
 temp_git_keys="cd $temp_cwd/keys > /dev/null && git pull origin HEAD:master && cd - > /dev/null"
-temp_conda_completion="cd ~/.oh-my-zsh/custom/plugins/conda-zsh-completion > /dev/null && git pull origin master && cd - > /dev/null"
+temp_conda_completion="cd ~/.oh-my-zsh/custom/plugins/conda-zsh-completion > /dev/null && git pull origin master && chmod -R 755 ../conda-zsh-completion && cd - > /dev/null"
 temp_timelast="timelast $temp_cwd"
 temp_setup="cd $temp_cwd > /dev/null && bash ./setup.sh && cd - > /dev/null"
 temp_ip_fi="fi"
@@ -112,6 +112,7 @@ if [ ! -d ~/.oh-my-zsh/custom/plugins/conda-zsh-completion ]
 then
 	echo "installing conda completion..."
 	git clone git@github.com:sawyermade/conda-zsh-completion.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
+	chmod -R 755 ~/.oh-my-zsh/custom/plugins/conda-zsh-completion
 fi
 
 # Checks if .ssh exists
