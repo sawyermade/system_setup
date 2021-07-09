@@ -14,6 +14,7 @@ alias py='python3'
 alias gpr='git pull --recurse-submodules'
 alias rsync-app='rsync -rzvP --append --inplace'
 alias xming="export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0"
+alias oc='sudo openconnect --protocol=gp vpn.usf.edu'
 ### ALIAS ###
 
 ### SSH ALIAS ###
