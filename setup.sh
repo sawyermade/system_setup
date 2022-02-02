@@ -93,7 +93,6 @@ echo "# SawyerMade" > ~/.zshrc
 echo $temp_eval >> ~/.zshrc
 echo $temp_exp >> ~/.zshrc
 echo $temp_funcs >> ~/.zshrc
-echo $temp_alias >> ~/.zshrc
 echo $temp_if_timelast >> ~/.zshrc
 echo $temp_timediff >> ~/.zshrc
 echo $temp_ip_if >> ~/.zshrc 
@@ -106,6 +105,7 @@ echo $temp_ip_fi >> ~/.zshrc
 echo $temp_zshrc >> ~/.zshrc
 echo $temp_exp >> ~/.zshrc
 echo $temp_openssl >> ~/.zshrc 
+echo $temp_alias >> ~/.zshrc
 
 # Installs conda completion
 if [ ! -d ~/.oh-my-zsh/custom/plugins/conda-zsh-completion ]
