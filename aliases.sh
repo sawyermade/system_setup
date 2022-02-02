@@ -20,6 +20,7 @@ alias au='sudo apt upgrade'
 alias afu='sudo apt full-upgrade'
 alias adu='sudo apt dist-upgrade'
 alias ai='sudo apt install'
+alias nv='nvidia-smi'
 ### ALIAS ###
 
 ### SSH ALIAS ###
